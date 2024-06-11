@@ -53,7 +53,7 @@ $(QEMU_DIR):
 
 $(BUILD_DIR)/lib%.so : %.cc
 	mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -shared -fPIC -o $@ $< -ldl -lrt -lz
+	$(CXX) $(CXXFLAGS) -shared -fPIC -o $@ $< -ldl -lrt -lz -lcapstone
 
 -include $(DEPS)
 
