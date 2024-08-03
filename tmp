@@ -1,0 +1,12 @@
+CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+c2615049f502   10.120.24.15:5000/chengaoshi/ubuntu_22.04:v0   "tail -f"                5 seconds ago   Up 4 seconds                                               champsim_test
+bfcb864d5394   e35cfe9b7f0e                                   "tail -f"                2 days ago      Up 2 days                                                  objective_carson
+dca3347b287a   lobehub/lobe-chat                              "docker-entrypoint.s…"   2 months ago    Up 2 months    0.0.0.0:3210->3210/tcp, :::3210->3210/tcp   peaceful_shtern
+e5ca7c427044   cscd70:2023S                                   "/bin/bash"              2 months ago    Up 2 months                                                llvm-ycy
+7afd545315a1   2ecd97a9d801                                   "/bin/zsh"               2 months ago    Up 2 months                                                adoring_engelbart
+c7b5ba3f6d8e   ghcr.io/open-webui/open-webui:main             "bash start.sh"          3 months ago    Up 3 months    0.0.0.0:3000->8080/tcp, :::3000->8080/tcp   open-webui
+11ef57fe21ac   accelsim_gdb/ubuntu-18.04_cuda-11              "/bin/bash"              3 months ago    Up 3 months                                                accelsim-ycy
+57aae2b81e9f   nvidia/cuda:12.0.0-devel-ubuntu20.04           "/opt/nvidia/nvidia_…"   3 months ago    Up 2 months                                                sad_chandrasekhar
+45db94761e7e   snowdreamtech/frpc:latest                      "/bin/sh -c '/usr/bi…"   3 months ago    Up 3 months                                                frpc
+4d3e54814cc5   continuumio/anaconda3                          "/bin/bash"              7 months ago    Up 3 months    0.0.0.0:2023->8888/tcp, :::2023->8888/tcp   anaconda_ycy
+aebc8527479f   accelsim/ubuntu-18.04_cuda-11:latest           "/bin/bash"              11 months ago   Up 2 months                                                accel-sim-lin
