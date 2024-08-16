@@ -1,0 +1,777 @@
+@article{10.1145/3650110,
+author = {Pal, Asmita and Desai, Keerthana and Chatterjee, Rahul and San Miguel, Joshua},
+title = {Camouflage: Utility-Aware Obfuscation for Accurate Simulation of Sensitive Program Traces},
+year = {2024},
+issue_date = {June 2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {21},
+number = {2},
+issn = {1544-3566},
+url = {https://doi.org/10.1145/3650110},
+doi = {10.1145/3650110},
+abstract = {Trace-based simulation is a widely used methodology for system design exploration. It relies on realistic traces that represent a range of behaviors necessary to be evaluated, containing a lot of information about the application, its inputs and the underlying system on which it was generated. Consequently, generating traces from real-world executions risks leakage of sensitive information. To prevent this, traces can be obfuscated before release. However, this can undermine their ideal utility, i.e., how realistically a program behavior was captured. To address this, we propose Camouflage, a novel obfuscation framework, designed with awareness of the necessary architectural properties required to preserve trace utility, while ensuring secrecy of the inputs used to generate the trace. Focusing on memory access traces, our extensive evaluation on various benchmarks shows that camouflaged traces preserve the performance measurements of the original execution, with an average τ correlation of 0.66. We model input secrecy as an input indistinguishability problem and show that the average security loss is 7.8\%, which is better than traces generated from the state-of-the-art.},
+journal = {ACM Trans. Archit. Code Optim.},
+month = {may},
+articleno = {36},
+numpages = {23},
+keywords = {Synthetic trace generation, Privacy of traces, Performance characterization}
+}
+
+
+@misc{bera2024constableimprovingperformancepower,
+      title={Constable: Improving Performance and Power Efficiency by Safely Eliminating Load Instruction Execution}, 
+      author={Rahul Bera and Adithya Ranganathan and Joydeep Rakshit and Sujit Mahto and Anant V. Nori and Jayesh Gaur and Ataberk Olgun and Konstantinos Kanellopoulos and Mohammad Sadrosadati and Sreenivas Subramoney and Onur Mutlu},
+      year={2024},
+      eprint={2406.18786},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR},
+      url={https://arxiv.org/abs/2406.18786}, 
+}
+
+
+@ARTICLE{sniper,
+  author = {Trevor E. Carlson and Wim Heirman and Stijn Eyerman and Ibrahim Hur
+        and Lieven Eeckhout},
+  title = {An Evaluation of High-Level Mechanistic Core Models},
+  journal = {ACM Transactions on Architecture and Code Optimization (TACO)},
+  year = {2014},
+  address = {New York, NY, USA},
+  articleno = {5},
+  doi = {10.1145/2629677},
+  issn = {1544-3566},
+  issue_date = {April 2014},
+  numpages = {23},
+  publisher = {ACM}
+}
+
+@ARTICLE{jade,
+  author={Jiang, Fan and Maeda, Rafael K. V. and Feng, Jun and Chen, Shixi and Chen, Lin and Li, Xiao and Xu, Jiang},
+  journal={IEEE Transactions on Parallel and Distributed Systems}, 
+  title={Fast and Accurate Statistical Simulation of Shared-Memory Applications on Multicore Systems}, 
+  year={2022},
+  volume={33},
+  number={10},
+  pages={2455-2469},
+  keywords={Instruction sets;Computational modeling;Multicore processing;Synchronization;Computer architecture;Message systems;Benchmark testing;Statistical simulation;reuse distance;performance modeling;simulation speedup;locality model;multicore system},
+  doi={10.1109/TPDS.2022.3143535}}
+
+@misc{championship,
+      title={The Championship Simulator: Architectural Simulation for Education and Competition}, 
+      author={Nathan Gober and Gino Chacon and Lei Wang and Paul V. Gratz and Daniel A. Jimenez and Elvira Teran and Seth Pugsley and Jinchun Kim},
+      year={2022},
+      eprint={2210.14324},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR}
+}
+
+@article{simpoint,
+author = {Hamerly, Greg and Perelman, Erez and Lau, Jeremy and Calder, Brad},
+year = {2005},
+month = {09},
+pages = {1-28},
+title = {SimPoint 3.0: Faster and More Flexible Program Phase Analysis},
+volume = {7},
+journal = {Journal of Instruction-Level Parallelism}
+}
+
+@INPROCEEDINGS{smarts,
+  author={Wunderlich, R.E. and Wenisch, T.F. and Falsafi, B. and Hoe, J.C.},
+  booktitle={30th Annual International Symposium on Computer Architecture, 2003. Proceedings.}, 
+  title={SMARTS: accelerating microarchitecture simulation via rigorous statistical sampling}, 
+  year={2003},
+  volume={},
+  number={},
+  pages={84-95},
+  keywords={Acceleration;Microarchitecture;Sampling methods;Computational modeling;Benchmark testing;Hardware;Computer simulation;Proposals;Computer architecture;Computer errors},
+  doi={10.1109/ISCA.2003.1206991}}
+
+@ARTICLE{rd,
+  author={Mattson, R.L. and Gecsei, J. and Slutz, D. R. and Traiger, I. L.},
+  journal={IBM Systems Journal}, 
+  title={Evaluation techniques for storage hierarchies}, 
+  year={1970},
+  volume={9},
+  number={2},
+  pages={78-117},
+  keywords={},
+  doi={10.1147/sj.92.0078}}
+
+@article{Locality_Phase_Prediction,
+author = {Shen, Xipeng and Zhong, Yutao and Ding, Chen},
+title = {Locality phase prediction},
+year = {2004},
+issue_date = {November 2004},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {39},
+number = {11},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/1037187.1024414},
+doi = {10.1145/1037187.1024414},
+abstract = {As computer memory hierarchy becomes adaptive, its performance increasingly depends on forecasting the dynamic program locality. This paper presents a method that predicts the locality phases of a program by a combination of locality profiling and run-time prediction. By profiling a training input, it identifies locality phases by sifting through all accesses to all data elements using variable-distance sampling, wavelet filtering, and optimal phase partitioning. It then constructs a phase hierarchy through grammar compression. Finally, it inserts phase markers into the program using binary rewriting. When the instrumented program runs, it uses the first few executions of a phase to predict all its later executions.Compared with existing methods based on program code and execution intervals, locality phase prediction is unique because it uses locality profiles, and it marks phase boundaries in program code. The second half of the paper presents a comprehensive evaluation. It measures the accuracy and the coverage of the new technique and compares it with best known run-time methods. It measures its benefit in adaptive cache resizing and memory remapping. Finally, it compares the automatic analysis with manual phase marking. The results show that locality phase prediction is well suited for identifying large, recurring phases in complex programs.},
+journal = {SIGPLAN Not.},
+month = {10},
+pages = {165–176},
+numpages = {12},
+keywords = {dynamic optimization, locality analysis and optimization, phase hierarchy, program phase analysis and prediction, reconfigurable architecture}
+}
+
+@article{variable_length_rd,
+author = {Ding, Chen and Zhong, Yutao},
+title = {Predicting whole-program locality through reuse distance analysis},
+year = {2003},
+issue_date = {May 2003},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {38},
+number = {5},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/780822.781159},
+doi = {10.1145/780822.781159},
+abstract = {Profiling can accurately analyze program behavior for select data inputs. We show that profiling can also predict program locality for inputs other than profiled ones. Here locality is defined by the distance of data reuse. Studying whole-program data reuse may reveal global patterns not apparent in short-distance reuses or local control flow. However, the analysis must meet two requirements to be useful. The first is efficiency. It needs to analyze all accesses to all data elements in full-size benchmarks and to measure distance of any length and in any required precision. The second is predication. Based on a few training runs, it needs to classify patterns as regular and irregular and, for regular ones, it should predict their (changing) behavior for other inputs. In this paper, we show that these goals are attainable through three techniques: approximate analysis of reuse distance (originally called LRU stack distance), pattern recognition, and distance-based sampling. When tested on 15 integer and floating-point programs from SPEC and other benchmark suites, our techniques predict with on average 94\% accuracy for data inputs up to hundreds times larger than the training inputs. Based on these results, the paper discusses possible uses of this analysis.},
+journal = {SIGPLAN Not.},
+month = {5},
+pages = {245–257},
+numpages = {13},
+keywords = {data locality, pattern recognition, prediction, profiling, program locality, reuse distance, sampling, stack distance, training}
+}
+
+@INPROCEEDINGS{fluss,
+  author={Gharghabi, Shaghayegh and Ding, Yifei and Yeh, Chin-Chia Michael and Kamgar, Kaveh and Ulanova, Liudmila and Keogh, Eamonn},
+  booktitle={2017 IEEE International Conference on Data Mining (ICDM)}, 
+  title={Matrix Profile VIII: Domain Agnostic Online Semantic Segmentation at Superhuman Performance Levels}, 
+  year={2017},
+  volume={},
+  number={},
+  pages={117-126},
+  keywords={Time series analysis;Semantics;Hidden Markov models;Heart;Clustering algorithms;Motion segmentation;Sensors;Time Series;Semantic Segmentation;Online Algorithms},
+  doi={10.1109/ICDM.2017.21}}
+
+@inproceedings{bbv,
+author = {Sherwood, Timothy and Perelman, Erez and Hamerly, Greg and Calder, Brad},
+title = {Automatically characterizing large scale program behavior},
+year = {2002},
+isbn = {1581135742},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/605397.605403},
+doi = {10.1145/605397.605403},
+abstract = {Understanding program behavior is at the foundation of computer architecture and program optimization. Many programs have wildly different behavior on even the very largest of scales (over the complete execution of the program). This realization has ramifications for many architectural and compiler techniques, from thread scheduling, to feedback directed optimizations, to the way programs are simulated. However, in order to take advantage of time-varying behavior, we must first develop the analytical tools necessary to automatically and efficiently analyze program behavior over large sections of execution.Our goal is to develop automatic techniques that are capable of finding and exploiting the Large Scale Behavior of programs (behavior seen over billions of instructions). The first step towards this goal is the development of a hardware independent metric that can concisely summarize the behavior of an arbitrary section of execution in a program. To this end we examine the use of Basic Block Vectors. We quantify the effectiveness of Basic Block Vectors in capturing program behavior across several different architectural metrics, explore the large scale behavior of several programs, and develop a set of algorithms based on clustering capable of analyzing this behavior. We then demonstrate an application of this technology to automatically determine where to simulate for a program to help guide computer architecture research.},
+booktitle = {Proceedings of the 10th International Conference on Architectural Support for Programming Languages and Operating Systems},
+pages = {45–57},
+numpages = {13},
+series = {ASPLOS X}
+}
+
+@INPROCEEDINGS{Matrix_profile_I,
+  author={Yeh, Chin-Chia Michael and Zhu, Yan and Ulanova, Liudmila and Begum, Nurjahan and Ding, Yifei and Dau, Hoang Anh and Silva, Diego Furtado and Mueen, Abdullah and Keogh, Eamonn},
+  booktitle={2016 IEEE 16th International Conference on Data Mining (ICDM)}, 
+  title={Matrix Profile I: All Pairs Similarity Joins for Time Series: A Unifying View That Includes Motifs, Discords and Shapelets}, 
+  year={2016},
+  volume={},
+  number={},
+  pages={1317-1322},
+  keywords={Time series analysis;Approximation algorithms;Euclidean distance;Data mining;Indexes;Clustering algorithms;Text processing;Time Series;Similarity Joins;Motif Discovery},
+  doi={10.1109/ICDM.2016.0179}}
+
+@inproceedings{qemu,
+  title={QEMU, a fast and portable dynamic translator.},
+  author={Bellard, Fabrice},
+  booktitle={USENIX annual technical conference, FREENIX Track},
+  volume={41},
+  number={46},
+  pages={10--5555},
+  year={2005},
+  organization={California, USA}
+}
+
+
+@article{olken,
+title = {Efficient methods for calculating the success function of fixed-space replacement policies},
+author = {Olken, F.},
+abstractNote = {Efficient methods are discussed for calculating the success function of replacement policies used to manage very large fixed size caches. Such problems arise in studying the caching of files on disk. Earlier work by Coffman and Randell, and Mattson et al. A class of replacement policies is characterized which it is possible to evaluate the success function for a single cache size in time O(n*log(s)), where n is the number of memory references in the trace and s is the size of cache. An algorithm is constructed to evaluate the success function for the Least Recently Used replacement policy in time O(n*log(s)), for cache sizes smaller than s. This algorithm runs in bounded memory, O(s). It is also shown how to modify Bennett and Kruskal's algorithm to run in bounded space. The two algorithms have the same asymptotic running times (within a constant factor). Measured running times for the classic LRU algorithm, Bennett and Kruskal's algorithm, and the new algorithm are compared. The impace of variable size segments (files, rather than fixed size pages), and deletions on algorithms for calculating success functions is considered.},
+doi = {10.2172/6051879},
+url = {https://www.osti.gov/biblio/6051879}, journal = {},
+place = {United States},
+year = {1981},
+month = {5}
+}
+
+@article{gem5,
+author = {Binkert, Nathan and Beckmann, Bradford and Black, Gabriel and Reinhardt, Steven K. and Saidi, Ali and Basu, Arkaprava and Hestness, Joel and Hower, Derek R. and Krishna, Tushar and Sardashti, Somayeh and Sen, Rathijit and Sewell, Korey and Shoaib, Muhammad and Vaish, Nilay and Hill, Mark D. and Wood, David A.},
+title = {The gem5 simulator},
+year = {2011},
+issue_date = {May 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {39},
+number = {2},
+issn = {0163-5964},
+url = {https://doi.org/10.1145/2024716.2024718},
+doi = {10.1145/2024716.2024718},
+abstract = {The gem5 simulation infrastructure is the merger of the best aspects of the M5 [4] and GEMS [9] simulators. M5 provides a highly configurable simulation framework, multiple ISAs, and diverse CPU models. GEMS complements these features with a detailed and exible memory system, including support for multiple cache coherence protocols and interconnect models. Currently, gem5 supports most commercial ISAs (ARM, ALPHA, MIPS, Power, SPARC, and x86), including booting Linux on three of them (ARM, ALPHA, and x86).The project is the result of the combined efforts of many academic and industrial institutions, including AMD, ARM, HP, MIPS, Princeton, MIT, and the Universities of Michigan, Texas, and Wisconsin. Over the past ten years, M5 and GEMS have been used in hundreds of publications and have been downloaded tens of thousands of times. The high level of collaboration on the gem5 project, combined with the previous success of the component parts and a liberal BSD-like license, make gem5 a valuable full-system simulation tool.},
+journal = {SIGARCH Comput. Archit. News},
+month = {8},
+pages = {1–7},
+numpages = {7}
+}
+
+@INPROCEEDINGS{mocktails,
+  author={Badr, Mario and Delconte, Carlo and Edo, Isak and Jagtap, Radhika and Andreozzi, Matteo and Jerger, Natalie Enright},
+  booktitle={2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)}, 
+  title={Mocktails: Capturing the Memory Behaviour of Proprietary Mobile Architectures}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={460-472},
+  keywords={Simulation;Systems-on-Chip;Memory Systems},
+  doi={10.1109/ISCA45697.2020.00046}}
+
+@INPROCEEDINGS{hrd,
+  author={Maeda, Rafael K. V. and Cai, Qiong and Xu, Jiang and Wang, Zhe and Tian, Zhongyuan},
+  booktitle={2017 IEEE International Symposium on High Performance Computer Architecture (HPCA)}, 
+  title={Fast and Accurate Exploration of Multi-level Caches Using Hierarchical Reuse Distance}, 
+  year={2017},
+  volume={},
+  number={},
+  pages={145-156},
+  keywords={Computational modeling;Benchmark testing;Estimation;Analytical models;Measurement;Organizations;Computers;reuse distance;cache;simulation;statistical},
+  doi={10.1109/HPCA.2017.11}}
+
+@INPROCEEDINGS{looppoint,
+  author={Sabu, Alen and Patil, Harish and Heirman, Wim and Carlson, Trevor E.},
+  booktitle={2022 IEEE International Symposium on High-Performance Computer Architecture (HPCA)}, 
+  title={LoopPoint: Checkpoint-driven Sampled Simulation for Multi-threaded Applications}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={604-618},
+  keywords={Data centers;Codes;Multicore processing;Computational modeling;Computer architecture;Parallel processing;Benchmark testing;checkpointing;multi-threaded;record-and-replay;sampling;simulation},
+  doi={10.1109/HPCA53966.2022.00051}}
+
+@INPROCEEDINGS{BarrierPoint,
+  author={Carlson, Trevor E. and Heirman, Wim and Van Craeynest, Kenzo and Eeckhout, Lieven},
+  booktitle={2014 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, 
+  title={BarrierPoint: Sampled simulation of multi-threaded applications}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={2-12},
+  keywords={Benchmark testing;Vectors;Load modeling;Microarchitecture;Instruction sets;Synchronization},
+  doi={10.1109/ISPASS.2014.6844456}}
+
+@inproceedings{kmeans,
+  title={Some methods for classification and analysis of multivariate observations},
+  author={MacQueen, James and others},
+  booktitle={Proceedings of the fifth Berkeley symposium on mathematical statistics and probability},
+  volume={1},
+  number={14},
+  pages={281--297},
+  year={1967},
+  organization={Oakland, CA, USA}
+}
+
+@INPROCEEDINGS{bbv_online,
+  author={Sherwood, T. and Perelman, E. and Calder, B.},
+  booktitle={Proceedings 2001 International Conference on Parallel Architectures and Compilation Techniques}, 
+  title={Basic block distribution analysis to find periodic behavior and simulation points in applications}, 
+  year={2001},
+  volume={},
+  number={},
+  pages={3-14},
+  keywords={Analytical models;Computational modeling;Fingerprint recognition;Application software;Computer simulation;Pipelines;Frequency estimation;Delay estimation;Timing;Computer science},
+  doi={10.1109/PACT.2001.953283}}
+
+@INPROCEEDINGS{variable_bbv,
+  author={Lau, J. and Perelman, E. and Hamerly, G. and Sherwood, T. and Calder, B.},
+  booktitle={IEEE International Symposium on Performance Analysis of Systems and Software, 2005. ISPASS 2005.}, 
+  title={Motivation for Variable Length Intervals and Hierarchical Phase Behavior}, 
+  year={2005},
+  volume={},
+  number={},
+  pages={135-146},
+  keywords={Computer science;Optimizing compilers;Phase detection;Machine learning;Large-scale systems;Hardware;Counting circuits;Frequency},
+  doi={10.1109/ISPASS.2005.1430568}}
+
+
+@inproceedings{sequiter,
+author = {Larus, James R.},
+title = {Whole program paths},
+year = {1999},
+isbn = {1581130945},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/301618.301678},
+doi = {10.1145/301618.301678},
+abstract = {Whole program paths (WPP) are a new approach to capturing and representing a program's dynamic---actually executed---control flow. Unlike other path profiling techniques, which record intraprocedural or acyclic paths, WPPs produce a single, compact description of a program's entire control flow, including loop iteration and interprocedural paths.This paper explains how to collect and represent WPPs. It also shows how to use WPPs to find hot subpaths, which are the heavily executed sequences of code that should be the focus of performance tuning and compiler optimization.},
+booktitle = {Proceedings of the ACM SIGPLAN 1999 Conference on Programming Language Design and Implementation},
+pages = {259–269},
+numpages = {11},
+keywords = {data compression, dynamic program measurement, path profiling, program control flow, program tracing},
+series = {PLDI '99}
+}
+
+@ARTICLE{sequiter_2,
+  author={Nevill-Manning, C. G. and Witten, I. H.},
+  journal={The Computer Journal}, 
+  title={Compression and Explanation using Hierarchical Grammars}, 
+  year={1997},
+  volume={40},
+  number={2_and_3},
+  pages={103-116},
+  keywords={},
+  doi={10.1093/comjnl/40.2_and_3.103}}
+
+@article{BIC,
+ ISSN = {01621459},
+ URL = {http://www.jstor.org/stable/2291327},
+ abstract = {To compute a Bayes factor for testing H0: ψ = ψ0 in the presence of a nuisance parameter β, priors under the null and alternative hypotheses must be chosen. As in Bayesian estimation, an important problem has been to define automatic, or "reference," methods for determining priors based only on the structure of the model. In this article we apply the heuristic device of taking the amount of information in the prior on ψ equal to the amount of information in a single observation. Then, after transforming β to be "null orthogonal" to ψ, we take the marginal priors on β to be equal under the null and alternative hypotheses. Doing so, and taking the prior on ψ to be Normal, we find that the log of the Bayes factor may be approximated by the Schwarz criterion with an error of order Op(n-1/2), rather than the usual error of order Op(1). This result suggests the Schwarz criterion should provide sensible approximate solutions to Bayesian testing problems, at least when the hypotheses are nested. When instead the prior on ψ is elliptically Cauchy, a constant correction term must be added to the Schwarz criterion; the result then becomes a multidimensional generalization of Jeffreys's method.},
+ author = {Robert E. Kass and Larry Wasserman},
+ journal = {Journal of the American Statistical Association},
+ number = {431},
+ pages = {928--934},
+ publisher = {[American Statistical Association, Taylor & Francis, Ltd.]},
+ title = {A Reference Bayesian Test for Nested Hypotheses and its Relationship to the Schwarz Criterion},
+ urldate = {2024-05-17},
+ volume = {90},
+ year = {1995}
+}
+
+@misc{tonekaboni2021unsupervised,
+      title={Unsupervised Representation Learning for Time Series with Temporal Neighborhood Coding}, 
+      author={Sana Tonekaboni and Danny Eytan and Anna Goldenberg},
+      year={2021},
+      eprint={2106.00750},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+@article{Binkert:2011:gem5,
+  author       = {Nathan L. Binkert and
+                  Bradford M. Beckmann and
+                  Gabriel Black and
+                  Steven K. Reinhardt and
+                  Ali G. Saidi and
+                  Arkaprava Basu and
+                  Joel Hestness and
+                  Derek Hower and
+                  Tushar Krishna and
+                  Somayeh Sardashti and
+                  Rathijit Sen and
+                  Korey Sewell and
+                  Muhammad Shoaib Bin Altaf and
+                  Nilay Vaish and
+                  Mark D. Hill and
+                  David A. Wood},
+  title        = {The gem5 simulator},
+  journal      = {{SIGARCH} Comput. Archit. News},
+  volume       = {39},
+  number       = {2},
+  pages        = {1--7},
+  year         = {2011},
+  url          = {https://doi.org/10.1145/2024716.2024718},
+  doi          = {10.1145/2024716.2024718}
+}
+
+@article{Lowe-Power:2020:gem5-20,
+  author       = {Jason Lowe{-}Power and
+                  Abdul Mutaal Ahmad and
+                  Ayaz Akram and
+                  Mohammad Alian and
+                  Rico Amslinger and
+                  Matteo Andreozzi and
+                  Adri{\`{a}} Armejach and
+                  Nils Asmussen and
+                  Srikant Bharadwaj and
+                  Gabe Black and
+                  Gedare Bloom and
+                  Bobby R. Bruce and
+                  Daniel Rodrigues Carvalho and
+                  Jer{'{o}}nimo Castrill{'{o}}n and
+                  Lizhong Chen and
+                  Nicolas Derumigny and
+                  Stephan Diestelhorst and
+                  Wendy Elsasser and
+                  Marjan Fariborz and
+                  Amin Farmahini Farahani and
+                  Pouya Fotouhi and
+                  Ryan Gambord and
+                  Jayneel Gandhi and
+                  Dibakar Gope and
+                  Thomas Grass and
+                  Bagus Hanindhito and
+                  Andreas Hansson and
+                  Swapnil Haria and
+                  Austin Harris and
+                  Timothy Hayes and
+                  Adrian Herrera and
+                  Matthew Horsnell and
+                  Syed Ali Raza Jafri and
+                  Radhika Jagtap and
+                  Hanhwi Jang and
+                  Reiley Jeyapaul and
+                  Timothy M. Jones and
+                  Matthias Jung and
+                  Subash Kannoth and
+                  Hamidreza Khaleghzadeh and
+                  Yuetsu Kodama and
+                  Tushar Krishna and
+                  Tommaso Marinelli and
+                  Christian Menard and
+                  Andrea Mondelli and
+                  Tiago M{"{u}}ck and
+                  Omar Naji and
+                  Krishnendra Nathella and
+                  Hoa Nguyen and
+                  Nikos Nikoleris and
+                  Lena E. Olson and
+                  Marc S. Orr and
+                  Binh Pham and
+                  Pablo Prieto and
+                  Trivikram Reddy and
+                  Alec Roelke and
+                  Mahyar Samani and
+                  Andreas Sandberg and
+                  Javier Setoain and
+                  Boris Shingarov and
+                  Matthew D. Sinclair and
+                  Tuan Ta and
+                  Rahul Thakur and
+                  Giacomo Travaglini and
+                  Michael Upton and
+                  Nilay Vaish and
+                  Ilias Vougioukas and
+                  Zhengrong Wang and
+                  Norbert Wehn and
+                  Christian Weis and
+                  David A. Wood and
+                  Hongil Yoon and
+                  {'{E}}der F. Zulian},
+  title        = {The gem5 Simulator: Version 20.0+},
+  journal      = {CoRR},
+  volume       = {abs/2007.03152},
+  year         = {2020},
+  url          = {https://arxiv.org/abs/2007.03152},
+  eprinttype    = {arXiv},
+  eprint       = {2007.03152}
+}
+
+@inproceedings{Hansson:2014:dram-controller,
+  author       = {Andreas Hansson and
+                  Neha Agarwal and
+                  Aasheesh Kolli and
+                  Thomas F. Wenisch and
+                  Aniruddha N. Udipi},
+  title        = {Simulating {DRAM} controllers for future system architecture exploration},
+  booktitle    = {2014 {IEEE} International Symposium on Performance Analysis of Systems
+                  and Software, {ISPASS} 2014, Monterey, CA, USA, March 23-25, 2014},
+  pages        = {201--210},
+  publisher    = {{IEEE} Computer Society},
+  year         = {2014},
+  url          = {https://doi.org/10.1109/ISPASS.2014.6844484},
+  doi          = {10.1109/ISPASS.2014.6844484}
+}
+
+@INPROCEEDINGS{FAST,
+  author={Chiou, Derek and Sunwoo, Dam and Kim, Joonsoo and Patil, Nikhil A. and Reinhart, William and Johnson, Darrel Eric and Keefe, Jebediah and Angepat, Hari},
+  booktitle={40th Annual IEEE/ACM International Symposium on Microarchitecture (MICRO 2007)}, 
+  title={FPGA-Accelerated Simulation Technologies (FAST): Fast, Full-System, Cycle-Accurate Simulators}, 
+  year={2007},
+  volume={},
+  number={},
+  pages={249-261},
+  keywords={Computational modeling;Predictive models;Timing;Computer simulation;Operating systems;Instruction sets;Field programmable gate arrays;Hardware;Application software;Linux},
+  doi={10.1109/MICRO.2007.36}}
+
+@ARTICLE{FireSim,
+  author={Karandikar, Sagar and Mao, Howard and Kim, Donggyu and Biancolin, David and Amid, Alon and Lee, Dayeol and Pemberton, Nathan and Amaro, Emmanuel and Schmidt, Colin and Chopra, Aditya and Huang, Qijing and Kovacs, Kyle and Nikolić, Borivoje and Katz, Randy Howard and Bachrach, Jonathan and Asanović, Krste},
+  journal={IEEE Micro}, 
+  title={FireSim: FPGA-Accelerated Cycle-Exact Scale-Out System Simulation in the Public Cloud}, 
+  year={2019},
+  volume={39},
+  number={3},
+  pages={56-65},
+  keywords={Switches;Servers;Field programmable gate arrays;Cloud computing;Computational modeling;Blades;Rockets},
+  doi={10.1109/MM.2019.2910175}}
+
+@INPROCEEDINGS{HAsim,
+  author={Pellauer, Michael and Adler, Michael and Kinsy, Michel and Parashar, Angshuman and Emer, Joel},
+  booktitle={2011 IEEE 17th International Symposium on High Performance Computer Architecture}, 
+  title={HAsim: FPGA-based high-detail multicore simulation using time-division multiplexing}, 
+  year={2011},
+  volume={},
+  number={},
+  pages={406-417},
+  keywords={Field programmable gate arrays;Multicore processing;Random access memory;Timing;Computational modeling;Multiplexing;System-on-a-chip;Simulation;Modeling;On-Chip Networks;Field-Programmable Gate Arrays;FPGA},
+  doi={10.1109/HPCA.2011.5749747}}
+
+
+@article{10.1145/2508148.2485963,
+author = {Sanchez, Daniel and Kozyrakis, Christos},
+title = {ZSim: fast and accurate microarchitectural simulation of thousand-core systems},
+year = {2013},
+issue_date = {June 2013},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {41},
+number = {3},
+issn = {0163-5964},
+url = {https://doi.org/10.1145/2508148.2485963},
+doi = {10.1145/2508148.2485963},
+abstract = {Architectural simulation is time-consuming, and the trend towards hundreds of cores is making sequential simulation even slower. Existing parallel simulation techniques either scale poorly due to excessive synchronization, or sacrifice accuracy by allowing event reordering and using simplistic contention models. As a result, most researchers use sequential simulators and model small-scale systems with 16-32 cores. With 100-core chips already available, developing simulators that scale to thousands of cores is crucial.We present three novel techniques that, together, make thousand-core simulation practical. First, we speed up detailed core models (including OOO cores) with instruction-driven timing models that leverage dynamic binary translation. Second, we introduce bound-weave, a two-phase parallelization technique that scales parallel simulation on multicore hosts efficiently with minimal loss of accuracy. Third, we implement lightweight user-level virtualization to support complex workloads, including multiprogrammed, client-server, and managed-runtime applications, without the need for full-system simulation, sidestepping the lack of scalable OSs and ISAs that support thousands of cores.We use these techniques to build zsim, a fast, scalable, and accurate simulator. On a 16-core host, zsim models a 1024-core chip at speeds of up to 1,500 MIPS using simple cores and up to 300 MIPS using detailed OOO cores, 2-3 orders of magnitude faster than existing parallel simulators. Simulator performance scales well with both the number of modeled cores and the number of host cores. We validate zsim against a real Westmere system on a wide variety of workloads, and find performance and microarchitectural events to be within a narrow range of the real system.},
+journal = {SIGARCH Comput. Archit. News},
+month = {jun},
+pages = {475–486},
+numpages = {12}
+}
+
+@inproceedings{Zsim,
+author = {Sanchez, Daniel and Kozyrakis, Christos},
+title = {ZSim: fast and accurate microarchitectural simulation of thousand-core systems},
+year = {2013},
+isbn = {9781450320795},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2485922.2485963},
+doi = {10.1145/2485922.2485963},
+abstract = {Architectural simulation is time-consuming, and the trend towards hundreds of cores is making sequential simulation even slower. Existing parallel simulation techniques either scale poorly due to excessive synchronization, or sacrifice accuracy by allowing event reordering and using simplistic contention models. As a result, most researchers use sequential simulators and model small-scale systems with 16-32 cores. With 100-core chips already available, developing simulators that scale to thousands of cores is crucial.We present three novel techniques that, together, make thousand-core simulation practical. First, we speed up detailed core models (including OOO cores) with instruction-driven timing models that leverage dynamic binary translation. Second, we introduce bound-weave, a two-phase parallelization technique that scales parallel simulation on multicore hosts efficiently with minimal loss of accuracy. Third, we implement lightweight user-level virtualization to support complex workloads, including multiprogrammed, client-server, and managed-runtime applications, without the need for full-system simulation, sidestepping the lack of scalable OSs and ISAs that support thousands of cores.We use these techniques to build zsim, a fast, scalable, and accurate simulator. On a 16-core host, zsim models a 1024-core chip at speeds of up to 1,500 MIPS using simple cores and up to 300 MIPS using detailed OOO cores, 2-3 orders of magnitude faster than existing parallel simulators. Simulator performance scales well with both the number of modeled cores and the number of host cores. We validate zsim against a real Westmere system on a wide variety of workloads, and find performance and microarchitectural events to be within a narrow range of the real system.},
+booktitle = {Proceedings of the 40th Annual International Symposium on Computer Architecture},
+pages = {475–486},
+numpages = {12},
+location = {Tel-Aviv, Israel},
+series = {ISCA '13}
+}
+
+@book{Eeckhout2010,
+  author    = {Lieven Eeckhout},
+  title     = {Computer Architecture Performance Evaluation Methods},
+  year      = {2010},
+  publisher = {Morgan \& Claypool},
+  address   = {San Rafael, CA, USA}
+}
+
+@ARTICLE{survey2019,
+  author={Akram, Ayaz and Sawalha, Lina},
+  journal={IEEE Access}, 
+  title={A Survey of Computer Architecture Simulation Techniques and Tools}, 
+  year={2019},
+  volume={7},
+  number={},
+  pages={78120-78145},
+  keywords={Computer architecture;Computational modeling;Tools;Object oriented modeling;Microarchitecture;Timing;Adaptation models;Computer architecture simulators;simulation techniques;validation;×86 simulators;simulators evaluation},
+  doi={10.1109/ACCESS.2019.2917698}}
+
+
+@inproceedings{multifidelity,
+author = {Lavin, Patrick and Young, Jeffrey and Vuduc, Richard},
+title = {Multifidelity Memory System Simulation in SST},
+year = {2024},
+isbn = {9798400716447},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3631882.3631890},
+doi = {10.1145/3631882.3631890},
+abstract = {As computer systems grow larger and more complex, it takes more time to simulate their behavior in detail. Researchers interested in simulating large-scale systems must choose between less-accurate high-level models or simulating smaller portions of their benchmark suite, both of which are highly manual, offline approaches that require time-consuming analysis by experts. Multifidelity simulation aims to lessen this burden by automatically adapting the fidelity of a simulation to the complexity of the behavior occurring at any given point in time. We show how a multifidelity memory system model can be used to accelerate single node simulation by up to 2x with 1-5\% mean absolute percent error in the simulated instructions per cycle across benchmark suites.},
+booktitle = {Proceedings of the International Symposium on Memory Systems},
+articleno = {8},
+numpages = {15},
+keywords = {Architectural simulation, memory modeling, phase detection, statistical simulation},
+location = {Alexandria, VA, USA},
+series = {MEMSYS '23}
+}
+
+@INPROCEEDINGS{interval,
+  author={Genbrugge, Davy and Eyerman, Stijn and Eeckhout, Lieven},
+  booktitle={HPCA - 16 2010 The Sixteenth International Symposium on High-Performance Computer Architecture}, 
+  title={Interval simulation: Raising the level of abstraction in architectural simulation}, 
+  year={2010},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Analytical models;Multicore processing;Sampling methods;Field programmable gate arrays;Performance analysis;Timing;Predictive models;Discrete event simulation;Coherence;Protocols},
+  doi={10.1109/HPCA.2010.5416636}}
+
+@INPROCEEDINGS{private_statistical,
+  author={Joshi, Ajay and Eeckhout, Lieven and Bell, Robert H. and John, Lizy},
+  booktitle={2006 IEEE International Symposium on Workload Characterization}, 
+  title={Performance Cloning: A Technique for Disseminating Proprietary Applications as Benchmarks}, 
+  year={2006},
+  volume={},
+  number={},
+  pages={105-115},
+  keywords={Cloning;Microprocessors;Microarchitecture;Application software;Workstations;Embedded computing;Costs;Embedded system;Predictive models;Intellectual property},
+  doi={10.1109/IISWC.2006.302734}}
+
+@INPROCEEDINGS{stm,
+  author={Awad, Amro and Solihin, Yan},
+  booktitle={2014 IEEE 20th International Symposium on High Performance Computer Architecture (HPCA)}, 
+  title={STM: Cloning the spatial and temporal memory access behavior}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={237-247},
+  keywords={Cloning;History;Prefetching;Computers;Probability;Benchmark testing},
+  doi={10.1109/HPCA.2014.6835935}}
+
+@INPROCEEDINGS{gpu_reuse,
+  author={Nugteren, Cedric and van den Braak, Gert-Jan and Corporaal, Henk and Bal, Henri},
+  booktitle={2014 IEEE 20th International Symposium on High Performance Computer Architecture (HPCA)}, 
+  title={A detailed GPU cache model based on reuse distance theory}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={37-48},
+  keywords={Instruction sets;Graphics processing units;System-on-chip;Kernel;Computer architecture;Data models},
+  doi={10.1109/HPCA.2014.6835955}}
+
+@inbook{spec2000,
+author = {KleinOsowski, AJ and Flynn, John and Meares, Nancy and Lilja, David J.},
+title = {Adapting the SPEC 2000 benchmark suite for simulation-based computer architecture research},
+year = {2001},
+isbn = {0792373154},
+publisher = {Kluwer Academic Publishers},
+address = {USA},
+abstract = {The large input datasets in the SPEC 2000 benchmark suite result in unreasonably long simulation times when using detailed execution-driven simulators for evaluating future computer architectures ideas. To address this problem, we have an ongoing project to reduce the execution times of the SPEC 2000 benchmarks in a quantitatively defensible way. Upon completion of this work 1, we will have smaller input datasets for several SPEC2000 benchmarks. The programs using our reduced input datasets will produce execution profiles that accurately reflect the program behavior of the full reference dataset, as measured using standard statistical tests. In the process of reducing and verifying the SPEC2000 Benchmark datasets, we also obtain instuction mix, memory behavior, and instructions per cycle characterization information about each benchmark program.},
+booktitle = {Workload Characterization of Emerging Computer Applications},
+pages = {83–100},
+numpages = {18}
+}
+
+@article{spec2006,
+author = {Henning, John L.},
+title = {SPEC CPU2006 benchmark descriptions},
+year = {2006},
+issue_date = {September 2006},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {34},
+number = {4},
+issn = {0163-5964},
+url = {https://doi.org/10.1145/1186736.1186737},
+doi = {10.1145/1186736.1186737},
+abstract = {On August 24, 2006, the Standard Performance Evaluation Corporation (SPEC) announced CPU2006 [2], which replaces CPU2000. The SPEC CPU benchmarks are widely used in both industry and academia [3].},
+journal = {SIGARCH Comput. Archit. News},
+month = {sep},
+pages = {1–17},
+numpages = {17}
+}
+
+@INPROCEEDINGS{spec2017,
+  author={Panda, Reena and Song, Shuang and Dean, Joseph and John, Lizy K.},
+  booktitle={2018 IEEE International Symposium on High Performance Computer Architecture (HPCA)}, 
+  title={Wait of a Decade: Did SPEC CPU 2017 Broaden the Performance Horizon?}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={271-282},
+  keywords={Benchmark testing;C++ languages;Measurement;Industries;Principal component analysis;Redundancy;Stress;Performance Evaluation;SPEC CPU2017;Benchmark Redundancy Analysis},
+  doi={10.1109/HPCA.2018.00032}}
+
+@article{phase_initial,
+author = {Sherwood, Timothy and Calder, Brad},
+year = {2002},
+month = {08},
+pages = {},
+title = {Time Varying Behavior of Programs}
+}
+
+@INPROCEEDINGS{workingset,
+  author={Dhodapkar, A.S. and Smith, J.E.},
+  booktitle={Proceedings 29th Annual International Symposium on Computer Architecture}, 
+  title={Managing multi-configuration hardware via dynamic working set analysis}, 
+  year={2002},
+  volume={},
+  number={},
+  pages={233-244},
+  keywords={Hardware;Microarchitecture;Change detection algorithms;Phase detection;Algorithm design and analysis;Optimization methods;Power engineering computing;Design engineering;Power engineering and energy;Microprocessors},
+  doi={10.1109/ISCA.2002.1003581}}
+
+@INPROCEEDINGS{conditinal_branch_count,
+  author={Balasubramonian, R. and Albones, D. and Buyuktosunoglu, A. and Dwarkadas, S.},
+  booktitle={Proceedings 33rd Annual IEEE/ACM International Symposium on Microarchitecture. MICRO-33 2000}, 
+  title={Memory hierarchy reconfiguration for energy and performance in general-purpose processor architectures}, 
+  year={2000},
+  volume={},
+  number={},
+  pages={245-257},
+  keywords={Delay;Microprocessors;Performance gain;Power dissipation;Energy efficiency;Computer architecture;Computer science;Microarchitecture;Repeaters;Energy management},
+  doi={10.1109/MICRO.2000.898075}}
+
+@article{working_set_earliest,
+author = {Denning, Peter J.},
+title = {The working set model for program behavior},
+year = {1968},
+issue_date = {May 1968},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {11},
+number = {5},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/363095.363141},
+doi = {10.1145/363095.363141},
+journal = {Commun. ACM},
+month = {may},
+pages = {323–333},
+numpages = {11},
+keywords = {storage allocation, scheduling, resource allocation, program models, program behavior, operating systems, multiprogramming, multiprocessing, general operating system concepts}
+}
+
+@ARTICLE{statistic_earliest,
+  author={Eeckhout, L. and Nussbaum, S. and Smith, J.E. and De Bosschere, K.},
+  journal={IEEE Micro}, 
+  title={Statistical simulation: adding efficiency to the computer designer's toolbox}, 
+  year={2003},
+  volume={23},
+  number={5},
+  pages={26-38},
+  keywords={Computational modeling;Computer simulation;Microarchitecture;Predictive models;Circuit simulation;Process design;Space exploration;Hardware;Registers;Runtime},
+  doi={10.1109/MM.2003.1240210}}
+
+@INPROCEEDINGS{WEST,
+  author={Balakrishnan, Ganesh and Solihin, Yan},
+  booktitle={IEEE International Symposium on High-Performance Comp Architecture}, 
+  title={WEST: Cloning data cache behavior using Stochastic Traces}, 
+  year={2012},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Cloning;Benchmark testing;Load modeling;Strontium;Stochastic processes;Data models;Emulation},
+  doi={10.1109/HPCA.2012.6169042}}
+
+@inproceedings{HALO,
+author = {Panda, Reena and John, Lizy K.},
+title = {HALO: A Hierarchical Memory Access Locality Modeling Technique For Memory System Explorations},
+year = {2018},
+isbn = {9781450357838},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3205289.3205323},
+doi = {10.1145/3205289.3205323},
+abstract = {Growing complexity of applications pose new challenges to memory system design due to their data intensive nature, complex access patterns, larger footprints, etc. The slow nature of full-system simulators, challenges of simulators to run deep software stacks of many emerging workloads, proprietary nature of software, etc. pose challenges to fast and accurate microarchitectural explorations of future memory hierarchies. One technique to mitigate this problem is to create spatio-temporal models of access streams and use them to explore memory system tradeoffs. However, existing memory stream models have weaknesses such as they only model temporal locality behavior or model spatio-temporal locality using global stride transitions, resulting in high storage/metadata overhead.In this paper, we propose HALO, a Hierarchical memory Access LOcality modeling technique that identifies patterns by isolating global memory references into localized streams and further zooming into each local stream capturing multi-granularity spatial locality patterns. HALO also models the interleaving degree between localized stream accesses leveraging coarse-grained reuse locality. We evaluate HALO's effectiveness in replicating original application performance using over 20K different memory system configurations and show that HALO achieves over 98.3\%, 95.6\%, 99.3\% and 96\% accuracy in replicating performance of prefetcher-enabled L1 \& L2 caches, TLB and DRAM respectively. HALO outperforms the state-of-the-art memory cloning schemes, WEST and STM, while using ~39X less metadata storage than STM.},
+booktitle = {Proceedings of the 2018 International Conference on Supercomputing},
+pages = {118–128},
+numpages = {11},
+location = {Beijing, China},
+series = {ICS '18}
+}
+
+@misc{openai2024gpt4technicalreport,
+      title={GPT-4 Technical Report}, 
+      author={OpenAI and Josh Achiam and Steven Adler and Sandhini Agarwal and Lama Ahmad and Ilge Akkaya and Florencia Leoni Aleman and Diogo Almeida and Janko Altenschmidt and Sam Altman and Shyamal Anadkat and Red Avila and Igor Babuschkin and Suchir Balaji and Valerie Balcom and Paul Baltescu and Haiming Bao and Mohammad Bavarian and Jeff Belgum and Irwan Bello and Jake Berdine and Gabriel Bernadett-Shapiro and Christopher Berner and Lenny Bogdonoff and Oleg Boiko and Madelaine Boyd and Anna-Luisa Brakman and Greg Brockman and Tim Brooks and Miles Brundage and Kevin Button and Trevor Cai and Rosie Campbell and Andrew Cann and Brittany Carey and Chelsea Carlson and Rory Carmichael and Brooke Chan and Che Chang and Fotis Chantzis and Derek Chen and Sully Chen and Ruby Chen and Jason Chen and Mark Chen and Ben Chess and Chester Cho and Casey Chu and Hyung Won Chung and Dave Cummings and Jeremiah Currier and Yunxing Dai and Cory Decareaux and Thomas Degry and Noah Deutsch and Damien Deville and Arka Dhar and David Dohan and Steve Dowling and Sheila Dunning and Adrien Ecoffet and Atty Eleti and Tyna Eloundou and David Farhi and Liam Fedus and Niko Felix and Simón Posada Fishman and Juston Forte and Isabella Fulford and Leo Gao and Elie Georges and Christian Gibson and Vik Goel and Tarun Gogineni and Gabriel Goh and Rapha Gontijo-Lopes and Jonathan Gordon and Morgan Grafstein and Scott Gray and Ryan Greene and Joshua Gross and Shixiang Shane Gu and Yufei Guo and Chris Hallacy and Jesse Han and Jeff Harris and Yuchen He and Mike Heaton and Johannes Heidecke and Chris Hesse and Alan Hickey and Wade Hickey and Peter Hoeschele and Brandon Houghton and Kenny Hsu and Shengli Hu and Xin Hu and Joost Huizinga and Shantanu Jain and Shawn Jain and Joanne Jang and Angela Jiang and Roger Jiang and Haozhun Jin and Denny Jin and Shino Jomoto and Billie Jonn and Heewoo Jun and Tomer Kaftan and Łukasz Kaiser and Ali Kamali and Ingmar Kanitscheider and Nitish Shirish Keskar and Tabarak Khan and Logan Kilpatrick and Jong Wook Kim and Christina Kim and Yongjik Kim and Jan Hendrik Kirchner and Jamie Kiros and Matt Knight and Daniel Kokotajlo and Łukasz Kondraciuk and Andrew Kondrich and Aris Konstantinidis and Kyle Kosic and Gretchen Krueger and Vishal Kuo and Michael Lampe and Ikai Lan and Teddy Lee and Jan Leike and Jade Leung and Daniel Levy and Chak Ming Li and Rachel Lim and Molly Lin and Stephanie Lin and Mateusz Litwin and Theresa Lopez and Ryan Lowe and Patricia Lue and Anna Makanju and Kim Malfacini and Sam Manning and Todor Markov and Yaniv Markovski and Bianca Martin and Katie Mayer and Andrew Mayne and Bob McGrew and Scott Mayer McKinney and Christine McLeavey and Paul McMillan and Jake McNeil and David Medina and Aalok Mehta and Jacob Menick and Luke Metz and Andrey Mishchenko and Pamela Mishkin and Vinnie Monaco and Evan Morikawa and Daniel Mossing and Tong Mu and Mira Murati and Oleg Murk and David Mély and Ashvin Nair and Reiichiro Nakano and Rajeev Nayak and Arvind Neelakantan and Richard Ngo and Hyeonwoo Noh and Long Ouyang and Cullen O'Keefe and Jakub Pachocki and Alex Paino and Joe Palermo and Ashley Pantuliano and Giambattista Parascandolo and Joel Parish and Emy Parparita and Alex Passos and Mikhail Pavlov and Andrew Peng and Adam Perelman and Filipe de Avila Belbute Peres and Michael Petrov and Henrique Ponde de Oliveira Pinto and Michael and Pokorny and Michelle Pokrass and Vitchyr H. Pong and Tolly Powell and Alethea Power and Boris Power and Elizabeth Proehl and Raul Puri and Alec Radford and Jack Rae and Aditya Ramesh and Cameron Raymond and Francis Real and Kendra Rimbach and Carl Ross and Bob Rotsted and Henri Roussez and Nick Ryder and Mario Saltarelli and Ted Sanders and Shibani Santurkar and Girish Sastry and Heather Schmidt and David Schnurr and John Schulman and Daniel Selsam and Kyla Sheppard and Toki Sherbakov and Jessica Shieh and Sarah Shoker and Pranav Shyam and Szymon Sidor and Eric Sigler and Maddie Simens and Jordan Sitkin and Katarina Slama and Ian Sohl and Benjamin Sokolowsky and Yang Song and Natalie Staudacher and Felipe Petroski Such and Natalie Summers and Ilya Sutskever and Jie Tang and Nikolas Tezak and Madeleine B. Thompson and Phil Tillet and Amin Tootoonchian and Elizabeth Tseng and Preston Tuggle and Nick Turley and Jerry Tworek and Juan Felipe Cerón Uribe and Andrea Vallone and Arun Vijayvergiya and Chelsea Voss and Carroll Wainwright and Justin Jay Wang and Alvin Wang and Ben Wang and Jonathan Ward and Jason Wei and CJ Weinmann and Akila Welihinda and Peter Welinder and Jiayi Weng and Lilian Weng and Matt Wiethoff and Dave Willner and Clemens Winter and Samuel Wolrich and Hannah Wong and Lauren Workman and Sherwin Wu and Jeff Wu and Michael Wu and Kai Xiao and Tao Xu and Sarah Yoo and Kevin Yu and Qiming Yuan and Wojciech Zaremba and Rowan Zellers and Chong Zhang and Marvin Zhang and Shengjia Zhao and Tianhao Zheng and Juntang Zhuang and William Zhuk and Barret Zoph},
+      year={2024},
+      eprint={2303.08774},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2303.08774}, 
+}
+
+@misc{chen2021evaluatinglargelanguagemodels,
+      title={Evaluating Large Language Models Trained on Code}, 
+      author={Mark Chen and Jerry Tworek and Heewoo Jun and Qiming Yuan and Henrique Ponde de Oliveira Pinto and Jared Kaplan and Harri Edwards and Yuri Burda and Nicholas Joseph and Greg Brockman and Alex Ray and Raul Puri and Gretchen Krueger and Michael Petrov and Heidy Khlaaf and Girish Sastry and Pamela Mishkin and Brooke Chan and Scott Gray and Nick Ryder and Mikhail Pavlov and Alethea Power and Lukasz Kaiser and Mohammad Bavarian and Clemens Winter and Philippe Tillet and Felipe Petroski Such and Dave Cummings and Matthias Plappert and Fotios Chantzis and Elizabeth Barnes and Ariel Herbert-Voss and William Hebgen Guss and Alex Nichol and Alex Paino and Nikolas Tezak and Jie Tang and Igor Babuschkin and Suchir Balaji and Shantanu Jain and William Saunders and Christopher Hesse and Andrew N. Carr and Jan Leike and Josh Achiam and Vedant Misra and Evan Morikawa and Alec Radford and Matthew Knight and Miles Brundage and Mira Murati and Katie Mayer and Peter Welinder and Bob McGrew and Dario Amodei and Sam McCandlish and Ilya Sutskever and Wojciech Zaremba},
+      year={2021},
+      eprint={2107.03374},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2107.03374}, 
+}
