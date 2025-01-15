@@ -137,21 +137,21 @@ int aarch64_insn_is_branch(const cs_insn * insn) {
     }
     switch (insn->id)
     {
-    case AArch64_INS_BC:
-    case AArch64_INS_CBNZ:
-    case AArch64_INS_CBZ:
-    case AArch64_INS_TBNZ:
-    case AArch64_INS_TBZ:
-    case AArch64_INS_B://cs bug
+    case AARCH64_INS_BC:
+    case AARCH64_INS_CBNZ:
+    case AARCH64_INS_CBZ:
+    case AARCH64_INS_TBNZ:
+    case AARCH64_INS_TBZ:
+    case AARCH64_INS_B://cs bug
         return BRANCH_CONDITIONAL;
         // return BRANCH_DIRECT_JUMP;
-    case AArch64_INS_BL:
+    case AARCH64_INS_BL:
         return BRANCH_DIRECT_CALL;
-    case AArch64_INS_BLR:
+    case AARCH64_INS_BLR:
         return BRANCH_INDIRECT_CALL;
-    case AArch64_INS_BR:
+    case AARCH64_INS_BR:
         return BRANCH_INDIRECT;
-    case AArch64_INS_RET:
+    case AARCH64_INS_RET:
         return BRANCH_RETURN;
     default:
         return NOT_BRANCH;
@@ -181,6 +181,31 @@ int riscv64_insn_is_branch(const cs_insn * insn) {
     return 0;
 }
 
+int loongarch64_insn_is_branch(const cs_insn * insn) {
+    switch (insn->id)
+    {
+    case LOONGARCH_INS_B:
+    case LOONGARCH_INS_BL:
+    case LOONGARCH_INS_BEQ:
+    case LOONGARCH_INS_BEQZ:
+    case LOONGARCH_INS_BGE:
+    case LOONGARCH_INS_BGEU:
+    case LOONGARCH_INS_BLT:
+    case LOONGARCH_INS_BLTU:
+    case LOONGARCH_INS_BNE:
+    case LOONGARCH_INS_BNEZ:
+    case LOONGARCH_INS_BCEQZ:
+    case LOONGARCH_INS_BCNEZ:
+    case LOONGARCH_INS_JIRL:
+    case LOONGARCH_INS_JISCR0:
+    case LOONGARCH_INS_JISCR1:
+        return 1;
+    default:
+        return 0;
+    }
+    return 0;
+}
+
 struct target_info{
     const char *name;
     cs_arch arch;
@@ -192,13 +217,15 @@ struct target_info{
 
 
 target_info all_archs[] = {
-    { "aarch64",   CS_ARCH_AARCH64, cs_mode(CS_MODE_LITTLE_ENDIAN)                  , AArch64_INS_ENDING, aarch64_insn_is_branch},
+    { "aarch64",   CS_ARCH_AARCH64, cs_mode(CS_MODE_LITTLE_ENDIAN)                  , AARCH64_INS_ENDING, aarch64_insn_is_branch},
     { "mips64el",  CS_ARCH_MIPS,  cs_mode(CS_MODE_MIPS64 | CS_MODE_LITTLE_ENDIAN)   , MIPS_INS_ENDING , },
     { "mips64",    CS_ARCH_MIPS,  cs_mode(CS_MODE_MIPS64 | CS_MODE_BIG_ENDIAN)      , MIPS_INS_ENDING , },
     { "i386",      CS_ARCH_X86,   cs_mode(CS_MODE_32)                               , X86_INS_ENDING  , },
     { "x86_64",    CS_ARCH_X86,   cs_mode(CS_MODE_64)                               , X86_INS_ENDING  , x64_insn_is_branch},
     { "riscv32",   CS_ARCH_RISCV, cs_mode(CS_MODE_RISCV32 | CS_MODE_RISCVC)         , RISCV_INS_ENDING},
     { "riscv64",   CS_ARCH_RISCV, cs_mode(CS_MODE_RISCV64 | CS_MODE_RISCVC)         , RISCV_INS_ENDING, riscv64_insn_is_branch},
+    { "loongarch32",   CS_ARCH_LOONGARCH,   cs_mode(CS_MODE_LOONGARCH32)              , LOONGARCH_INS_ENDING, },
+    { "loongarch64",   CS_ARCH_LOONGARCH,   cs_mode(CS_MODE_LOONGARCH64)              , LOONGARCH_INS_ENDING, loongarch64_insn_is_branch},
     { NULL }
 };
 
@@ -472,8 +499,15 @@ static void tb_record(qemu_plugin_id_t id, struct qemu_plugin_tb* tb) {
     for (size_t i = 0; i < insns; i++) {
         struct qemu_plugin_insn* insn = qemu_plugin_tb_get_insn(tb, i);
         uint64_t addr = qemu_plugin_insn_vaddr(insn);
-        const uint8_t* data = (uint8_t*)qemu_plugin_insn_data(insn);
-        int size = qemu_plugin_insn_size(insn);
+        size_t size = qemu_plugin_insn_size(insn);
+#if QEMU_PLUGIN_VERSION == 2
+            const uint8_t* data = (uint8_t*)qemu_plugin_insn_data(insn);
+#else
+            uint8_t data[16];
+            if (qemu_plugin_insn_data(insn, &data, size) != size) {
+                fprintf(stderr, "lxy:%s:%s:%d qemu_plugin_insn_data failed\n", __FILE__,__func__,__LINE__);
+            }
+#endif
         insn_code ic = insn_code_init(addr, data, size);
         if (insn_code_data.count(ic) == 0) {
             trace_instr_format* insn_template =

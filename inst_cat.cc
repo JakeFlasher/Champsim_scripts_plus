@@ -54,13 +54,15 @@ struct target_info{
     // void (*disas_log)(const DisasContextBase *db, CPUState *cpu, FILE *f);
 };
 target_info all_archs[] = {
-    { "aarch64",   CS_ARCH_AARCH64, cs_mode(CS_MODE_LITTLE_ENDIAN)                    , AArch64_INS_ENDING, },
+    { "aarch64",   CS_ARCH_AARCH64, cs_mode(CS_MODE_LITTLE_ENDIAN)                    , AARCH64_INS_ENDING, },
     { "mips64el",  CS_ARCH_MIPS,    cs_mode(CS_MODE_MIPS64 | CS_MODE_LITTLE_ENDIAN)   , MIPS_INS_ENDING , },
     { "mips64",    CS_ARCH_MIPS,    cs_mode(CS_MODE_MIPS64 | CS_MODE_BIG_ENDIAN)      , MIPS_INS_ENDING , },
     { "i386",      CS_ARCH_X86,     cs_mode(CS_MODE_32)                               , X86_INS_ENDING  , },
     { "x86_64",    CS_ARCH_X86,     cs_mode(CS_MODE_64)                               , X86_INS_ENDING  , },
     { "riscv32",   CS_ARCH_RISCV,   cs_mode(CS_MODE_RISCV32 | CS_MODE_RISCVC)         , RISCV_INS_ENDING, },
     { "riscv64",   CS_ARCH_RISCV,   cs_mode(CS_MODE_RISCV64 | CS_MODE_RISCVC)         , RISCV_INS_ENDING, },
+    { "loongarch32",   CS_ARCH_LOONGARCH,   cs_mode(CS_MODE_LOONGARCH32)              , LOONGARCH_INS_ENDING, },
+    { "loongarch64",   CS_ARCH_LOONGARCH,   cs_mode(CS_MODE_LOONGARCH64)              , LOONGARCH_INS_ENDING, },
     { NULL }
 };
 
@@ -97,6 +99,13 @@ void plugin_exit(qemu_plugin_id_t id, void *p)
     cs_close(&cs_handle);
 }
 
+#if QEMU_PLUGIN_VERSION != 2
+static void tb_exec_dummy_inline(unsigned int cpu_index, void *udata)
+{
+    ++ *(uint64_t*)udata;
+}
+#endif
+
 static void tb_record(qemu_plugin_id_t id, struct qemu_plugin_tb *tb)
 {
     size_t insns = qemu_plugin_tb_n_insns(tb);
@@ -104,7 +113,14 @@ static void tb_record(qemu_plugin_id_t id, struct qemu_plugin_tb *tb)
     for (size_t i = 0; i < insns; i ++) {
         struct qemu_plugin_insn *insn = qemu_plugin_tb_get_insn(tb, i);
         int size = qemu_plugin_insn_size(insn);
-        const uint8_t* data = (uint8_t*)qemu_plugin_insn_data(insn);
+#if QEMU_PLUGIN_VERSION == 2
+            const uint8_t* data = (uint8_t*)qemu_plugin_insn_data(insn);
+#else
+            uint8_t data[16];
+            if (qemu_plugin_insn_data(insn, &data, size) != size) {
+                fprintf(stderr, "lxy:%s:%s:%d qemu_plugin_insn_data failed\n", __FILE__,__func__,__LINE__);
+            }
+#endif
         uint64_t addr = qemu_plugin_insn_vaddr(insn);
         cs_insn *cs_insn;
         size_t count = cs_disasm(cs_handle, (const uint8_t*)data, size, addr, 1, &cs_insn);
@@ -112,7 +128,11 @@ static void tb_record(qemu_plugin_id_t id, struct qemu_plugin_tb *tb)
             size_t j;
             for (j = 0; j < count; j++) {
                 // printf("%16lx: %-15s%s\n", addr, cs_insn[j].mnemonic, cs_insn[j].op_str);
-                qemu_plugin_register_vcpu_insn_exec_inline(insn,QEMU_PLUGIN_INLINE_ADD_U64, reg_count + cs_insn->id, 1);
+#if QEMU_PLUGIN_VERSION == 2
+                qemu_plugin_register_vcpu_insn_exec_inline(insn,QEMU_PLUGIN_INLINE_ADD_U64, (void*)&reg_count + cs_insn->id, 1);
+#else
+                qemu_plugin_register_vcpu_tb_exec_cb(tb, tb_exec_dummy_inline, QEMU_PLUGIN_CB_NO_REGS, (void*)(reg_count + cs_insn->id));
+#endif
             }
             cs_free(cs_insn, count);
         } else {

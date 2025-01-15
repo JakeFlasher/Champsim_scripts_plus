@@ -18,6 +18,8 @@ extern "C" {
 #include "qemu-plugin.h"
 }
 
+#include "util.h"
+
 
 QEMU_PLUGIN_EXPORT int qemu_plugin_version = QEMU_PLUGIN_VERSION;
 
@@ -283,19 +285,19 @@ static void tb_record(qemu_plugin_id_t id, struct qemu_plugin_tb *tb)
     for (size_t i = 0; i < insns; i ++) {
         struct qemu_plugin_insn *insn = qemu_plugin_tb_get_insn(tb, i);
         int size = qemu_plugin_insn_size(insn);
-        const void* data = qemu_plugin_insn_data(insn);
-        uint32_t insn_data;
-        if (size == 2) {
-            insn_data = (uint32_t)*(uint16_t*)data;
-        } else {
-            insn_data = *(uint32_t*)data;
-        }
-        if (!insn_cnt.count(insn_data)) {
-            uint64_t* p = (uint64_t*)malloc(sizeof(uint64_t));
-            *p = 0;
-            insn_cnt[insn_data] = p;
-        }
-        qemu_plugin_register_vcpu_insn_exec_inline(insn,QEMU_PLUGIN_INLINE_ADD_U64, insn_cnt[insn_data], 1);
+        // const void* data = qemu_plugin_insn_data(insn);
+        // uint32_t insn_data;
+        // if (size == 2) {
+        //     insn_data = (uint32_t)*(uint16_t*)data;
+        // } else {
+        //     insn_data = *(uint32_t*)data;
+        // }
+        // if (!insn_cnt.count(insn_data)) {
+        //     uint64_t* p = (uint64_t*)malloc(sizeof(uint64_t));
+        //     *p = 0;
+        //     insn_cnt[insn_data] = p;
+        // }
+        // qemu_plugin_register_vcpu_insn_exec_inline(insn,QEMU_PLUGIN_INLINE_ADD_U64, insn_cnt[insn_data], 1);
     }
 }
 
@@ -303,8 +305,13 @@ QEMU_PLUGIN_EXPORT
 int qemu_plugin_install(qemu_plugin_id_t id, const qemu_info_t *info,
                         int argc, char **argv)
 {
-    // plugin_init();
-
+    bool a = plugin_args_get_bool_or_else(argc, argv, "op1", false);
+    uint64_t b = plugin_args_get_u64_or_else(argc, argv, "op2", 100);
+    char *p = plugin_args_get(argc, argv, "123");
+    printf("0   %x\n", a);
+    printf("1   %lx\n", b);
+    printf("2   %s\n", p);
+exit(0);
     qemu_plugin_register_vcpu_tb_trans_cb(id, tb_record);
     qemu_plugin_register_atexit_cb(id, plugin_exit, NULL);
     return 0;
